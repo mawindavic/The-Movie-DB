@@ -68,8 +68,6 @@ object Room {
 
 object Modules {
     val data by lazy { ":data" }
-    val utils by lazy { ":utils" }
-    val wakala by lazy { ":wakala" }
 }
 
 object Hilt {
