@@ -15,7 +15,6 @@ class HomeViewModel @Inject constructor(private val repository: MovieDBRepositor
         getTrending()
     }
 
-
     private fun getTrending() {
         viewModelScope.launch {
             repository.trendingMovies().also {

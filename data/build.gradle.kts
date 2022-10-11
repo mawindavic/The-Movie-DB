@@ -16,6 +16,11 @@ android {
         targetSdk = AndroidSdkConfig.targetSdk
         testInstrumentationRunner = AndroidSdkConfig.testInstrumentationRunner
         consumerProguardFiles("consumer-rules.pro")
+        externalNativeBuild {
+            cmake {
+                cppFlags += ""
+            }
+        }
     }
 
     buildTypes {
@@ -33,6 +38,12 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
+    }
+    externalNativeBuild {
+        cmake {
+            path = file("src/main/cpp/CMakeLists.txt")
+            version = "3.18.1"
+        }
     }
 }
 

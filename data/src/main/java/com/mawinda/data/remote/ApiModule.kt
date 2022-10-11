@@ -16,10 +16,11 @@ import javax.inject.Singleton
 object ApiModule {
     private const val BASE_URL = "https://api.themoviedb.org/"
 
+
     @Singleton
     @Provides
     fun providesAuthorisationInterceptor() =
-        AuthInterceptor(token = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNzRmMjgzM2IzMWYxMWE0ZDk1ODAyNzRiNmViMTgwYSIsInN1YiI6IjYzNDNmYjEzZDM0ZWIzMDA5MDM2NDIwZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.WDu9IE4P6CyGGrQcorgAeESpt14LyDsogtp_EEz6iG0")
+        AuthInterceptor()
 
     @Singleton
     @Provides
