@@ -9,15 +9,18 @@ import kotlinx.android.parcel.Parcelize
 data class TrendingMovies(
 
     @field:SerializedName("page")
-    val page: Int? = null,
+    val page: Int,
 
     @field:SerializedName("total_pages")
-    val totalPages: Int? = null,
+    val totalPages: Int,
 
     @field:SerializedName("results")
-    val results: List<MovieDTO?>? = null,
+    val results: List<MovieDTO>,
 
     @field:SerializedName("total_results")
-    val totalResults: Int? = null
-) : Parcelable
+    val totalResults: Int
+) : Parcelable {
+    val isEndOfPagination: Boolean
+        get() = page == totalPages
+}
 

@@ -2,6 +2,7 @@ package com.mawinda.data.remote.model.dto
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import com.mawinda.data.local.entities.Movie
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
@@ -17,13 +18,13 @@ data class MovieDTO(
     val originalLanguage: String? = null,
 
     @field:SerializedName("genre_ids")
-    val genreIds: List<Int?>? = null,
+    val genreIds: List<Int>? = null,
 
     @field:SerializedName("poster_path")
     val posterPath: String? = null,
 
     @field:SerializedName("origin_country")
-    val originCountry: List<String?>? = null,
+    val originCountry: List<String>? = null,
 
     @field:SerializedName("backdrop_path")
     val backdropPath: String? = null,
@@ -44,7 +45,7 @@ data class MovieDTO(
     val name: String? = null,
 
     @field:SerializedName("id")
-    val id: Int? = null,
+    val id: Int,
 
     @field:SerializedName("adult")
     val adult: Boolean? = null,
@@ -63,4 +64,28 @@ data class MovieDTO(
 
     @field:SerializedName("release_date")
     val releaseDate: String? = null
-) : Parcelable
+) : Parcelable {
+    fun toMovie(): Movie {
+        return Movie(
+            id,
+            firstAirDate,
+            overview,
+            originalLanguage,
+            genreIds,
+            posterPath,
+            originCountry,
+            backdropPath,
+            mediaType,
+            originalName,
+            popularity,
+            voteAverage,
+            name,
+            adult,
+            voteCount,
+            originalTitle,
+            video,
+            title,
+            releaseDate
+        )
+    }
+}

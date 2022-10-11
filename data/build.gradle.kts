@@ -52,6 +52,7 @@ dependencies {
     implementation(Libraries.timber)
     room()
     hilt()
+    paging()
 }
 kapt {
     correctErrorTypes = true

@@ -25,6 +25,13 @@ fun DependencyHandler.navigation() {
 
 }
 
+fun DependencyHandler.paging() {
+    implementation(AndroidLibraries.pagingRuntime)
+    implementation(AndroidLibraries.pagingRoom)
+
+    // implementation(AndroidLibraries.pagingCommon)
+}
+
 fun DependencyHandler.lifecycle() {
     implementation(LiveCycleModel.lifecycleExt)
     implementation(LiveCycleModel.livedata)

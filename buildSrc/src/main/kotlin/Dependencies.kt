@@ -3,7 +3,9 @@ object AndroidLibraries {
     val appCompat by lazy { "androidx.appcompat:appcompat:1.4.2" }
     val ktxCore by lazy { "androidx.core:core-ktx:1.8.0" }
     val material by lazy { "com.google.android.material:material:1.6.1" }
-    val paging by lazy { "androidx.paging:paging-runtime-ktx:3.1.1" }
+    val pagingRuntime by lazy { "androidx.paging:paging-runtime-ktx:3.1.1" }
+    val pagingCommon by lazy { "androidx.paging:paging-common-ktx:3.1.1" }
+    val pagingRoom by lazy { "androidx.room:room-paging:2.4.3" }
 }
 
 object GeneralViews {

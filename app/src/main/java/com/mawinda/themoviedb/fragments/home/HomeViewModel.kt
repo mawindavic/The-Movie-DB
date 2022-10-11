@@ -11,15 +11,6 @@ import javax.inject.Inject
 @HiltViewModel
 class HomeViewModel @Inject constructor(private val repository: MovieDBRepository) : ViewModel() {
 
-    init {
-        getTrending()
-    }
+    val movies = repository.movies()
 
-    private fun getTrending() {
-        viewModelScope.launch {
-            repository.trendingMovies().also {
-                Timber.i("Result: $it")
-            }
-        }
-    }
 }

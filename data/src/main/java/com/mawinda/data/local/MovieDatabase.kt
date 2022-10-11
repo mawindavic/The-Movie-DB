@@ -4,9 +4,9 @@ import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.mawinda.data.local.entities.MovieDao
-import com.mawinda.data.local.entities.MovieEntity
+import com.mawinda.data.local.entities.Movie
 
-@Database(entities = [MovieEntity::class], exportSchema = false, version = 1)
+@Database(entities = [Movie::class], exportSchema = false, version = 1)
 @TypeConverters(Converters::class)
 abstract class MovieDatabase : RoomDatabase() {
     abstract fun movieDao(): MovieDao
