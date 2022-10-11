@@ -34,6 +34,11 @@ android {
         }
     }
 
+    buildFeatures {
+        viewBinding = true
+        dataBinding = true
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -50,6 +55,7 @@ dependencies {
     lifecycle()
     implementation(AndroidLibraries.splashScreen)
     implementation(Libraries.coil)
+    implementation(Libraries.timber)
     hilt()
     implementation(project(Modules.data))
     test()
