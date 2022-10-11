@@ -225,5 +225,5 @@ class PagingAdapter<T : Any, R : ViewBinding>(
         submitData(updatedPagedData(list))
     }
 
-
 }
+

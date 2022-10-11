@@ -1,6 +1,5 @@
 package com.mawinda.data.remote
 
-import com.mawinda.data.local.entities.MovieDao
 import com.mawinda.data.remote.model.StatusResponseWithData
 import com.mawinda.data.remote.model.response.TrendingMovies
 import kotlinx.coroutines.CoroutineDispatcher
@@ -17,7 +16,7 @@ class RemoteDataSource @Inject constructor(
     suspend fun trendingMovies(page: Int): StatusResponseWithData<TrendingMovies> {
         return with(dispatchers) {
             apiRequest {
-                apiService.trending()
+                apiService.trending(page = page)
             }.toStatusResponse()
         }
     }

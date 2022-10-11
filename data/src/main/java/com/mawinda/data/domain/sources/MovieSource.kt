@@ -4,10 +4,13 @@ import androidx.paging.ExperimentalPagingApi
 import androidx.paging.LoadType
 import androidx.paging.PagingState
 import androidx.paging.RemoteMediator
-import com.mawinda.data.local.entities.MovieDao
 import com.mawinda.data.local.entities.Movie
+import com.mawinda.data.local.entities.MovieDao
 import com.mawinda.data.remote.RemoteDataSource
 import com.mawinda.data.remote.model.dto.MovieDTO
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalPagingApi::class)
 class MovieSource(private val remoteDataSource: RemoteDataSource, private val movieDao: MovieDao) :
@@ -30,9 +33,11 @@ class MovieSource(private val remoteDataSource: RemoteDataSource, private val mo
 
         val dtoMovies: List<MovieDTO> = mData.results
 
-        movieDao.insert(*dtoMovies.map { dto ->
-            dto.toMovie()
-        }.toTypedArray())
+        CoroutineScope(Dispatchers.IO).launch {
+            movieDao.insert(*dtoMovies.map { dto ->
+                dto.toMovie()
+            }.toTypedArray())
+        }
 
         return MediatorResult.Success(mData.isEndOfPagination)
     }
