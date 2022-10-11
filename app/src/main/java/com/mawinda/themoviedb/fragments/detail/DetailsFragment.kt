@@ -11,6 +11,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
 import com.mawinda.themoviedb.R
 import com.mawinda.themoviedb.databinding.FragmentDetailsBinding
+import com.mawinda.themoviedb.utils.toActivity
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 
@@ -23,6 +24,8 @@ class DetailsFragment : Fragment() {
         get() = _binding!!
 
     private val args: DetailsFragmentArgs by navArgs()
+
+    private val fragToActivity by toActivity()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -44,6 +47,7 @@ class DetailsFragment : Fragment() {
         lifecycleScope.launchWhenResumed {
             detailsViewModel.movie.observe(viewLifecycleOwner) {
                 it?.let { movie ->
+                    fragToActivity.setTitle(movie.title ?: "")
                     Timber.i("Movie: $movie")
                 }
             }

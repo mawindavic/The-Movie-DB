@@ -59,6 +59,9 @@ data class Movie(
 
     val backDrop: String
         get() = imageUrl.plus(backdropPath)
+
+    val popularityPercent: Double
+        get() = (popularity ?: 0.0).times(100)
 }
 
 @Dao

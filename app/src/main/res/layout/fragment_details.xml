@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -14,10 +15,100 @@
         android:layout_height="match_parent"
         tools:context=".fragments.detail.DetailsFragment">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Details" />
+        <ImageView
+            android:id="@+id/back_drop_img"
+            movieImage="@{viewModel.movie.backDrop}"
+            android:layout_width="0dp"
+            android:layout_height="160dp"
+            android:adjustViewBounds="true"
+            android:cropToPadding="true"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toStartOf="@id/end_guide"
+            app:layout_constraintStart_toEndOf="@id/start_guide"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/poster"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:outlineAmbientShadowColor="?attr/colorPrimary"
+            android:outlineSpotShadowColor="?attr/colorPrimary"
+            app:cardPreventCornerOverlap="true"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintBottom_toBottomOf="@id/back_drop_img"
+            app:layout_constraintStart_toEndOf="@id/start_guide"
+            app:layout_constraintTop_toBottomOf="@id/back_drop_img"
+            app:layout_constraintVertical_bias="0.8"
+            app:layout_constraintWidth_percent="0.24"
+            tools:ignore="UnusedAttribute">
+
+            <ImageView
+                movieImage="@{viewModel.movie.poster}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:cropToPadding="true" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/bottom_guide"
+            app:layout_constraintEnd_toStartOf="@id/end_guide"
+            app:layout_constraintStart_toEndOf="@id/start_guide"
+            app:layout_constraintTop_toBottomOf="@id/poster">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/view_padding"
+                    android:text="@{viewModel.movie.overview}"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/start_guide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/guide_size" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/end_guide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/guide_size" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/top_guide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="@dimen/guide_size" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/bottom_guide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="@dimen/guide_size" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>

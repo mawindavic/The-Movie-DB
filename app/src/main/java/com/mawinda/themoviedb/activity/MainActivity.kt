@@ -1,18 +1,19 @@
 package com.mawinda.themoviedb.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.mawinda.themoviedb.R
 import com.mawinda.themoviedb.databinding.ActivityMainBinding
+import com.mawinda.themoviedb.utils.FragToActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), FragToActivity {
 
     private val binding: ActivityMainBinding by lazy {
         DataBindingUtil.setContentView(this, R.layout.activity_main)
@@ -43,5 +44,9 @@ class MainActivity : AppCompatActivity() {
 
         //Navigation
         setupActionBarWithNavController(navController, appBarConfiguration)
+    }
+
+    override fun setTitle(title: String) {
+       mainViewModel.setTitle(title)
     }
 }

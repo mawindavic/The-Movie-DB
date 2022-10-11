@@ -21,4 +21,7 @@ object LocalModule {
 
     @Provides
     fun providesMovieDao(database: MovieDatabase) = database.movieDao()
+
+    @Provides
+    fun providesGenreDao(database: MovieDatabase) = database.genreDao()
 }

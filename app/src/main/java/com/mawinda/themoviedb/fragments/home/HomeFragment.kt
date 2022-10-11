@@ -15,6 +15,7 @@ import com.mawinda.themoviedb.R
 import com.mawinda.themoviedb.adapters.PagingAdapter
 import com.mawinda.themoviedb.databinding.FragmentHomeBinding
 import com.mawinda.themoviedb.databinding.MovieItemListBinding
+import com.mawinda.themoviedb.utils.toActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 
@@ -28,10 +29,11 @@ class HomeFragment : Fragment() {
     private val binding: FragmentHomeBinding
         get() = _binding!!
 
+
+    private val fragToActivity by toActivity()
+
     //Adapter
     private val adapter: PagingAdapter<Movie, MovieItemListBinding> by lazy {
-
-
         //Movie Item Comparator
         val comparator = object : DiffUtil.ItemCallback<Movie>() {
             override fun areItemsTheSame(oldItem: Movie, newItem: Movie): Boolean =
@@ -81,8 +83,8 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        fragToActivity.setTitle("Trending")
         binding.container.adapter = adapter
-
         lifecycleScope.launchWhenResumed {
             homeModel.movies.collectLatest {
                 adapter.submitData(it)

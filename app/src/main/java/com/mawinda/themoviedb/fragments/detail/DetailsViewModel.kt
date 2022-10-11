@@ -10,10 +10,9 @@ import javax.inject.Inject
 @HiltViewModel
 class DetailsViewModel @Inject constructor() : ViewModel() {
 
-    private val _movie: MutableLiveData<Movie?> = MutableLiveData()
-    val movie: LiveData<Movie?>
+    private val _movie: MutableLiveData<Movie> = MutableLiveData()
+    val movie: LiveData<Movie>
         get() = _movie
-
 
     fun setMovie(movie: Movie) {
         _movie.value = movie

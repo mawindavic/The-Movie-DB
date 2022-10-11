@@ -18,24 +18,14 @@
         app:cardPreventCornerOverlap="true"
         app:cardUseCompatPadding="true">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <ImageView
+            movieImage="@{movie.poster}"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                movieImage="@{movie.poster}"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:cropToPadding="true"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@{movie.title}"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:minHeight="160dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </com.google.android.material.card.MaterialCardView>
 </layout>
