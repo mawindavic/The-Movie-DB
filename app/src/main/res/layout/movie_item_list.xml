@@ -9,20 +9,33 @@
             type="com.mawinda.data.local.entities.Movie" />
     </data>
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
-        android:layout_height="160dp">
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardCornerRadius="@dimen/view_padding"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/view_padding">
+            android:layout_height="wrap_content">
+
+            <ImageView
+                movieImage="@{movie.poster}"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:cropToPadding="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@{movie.name}"
+                android:text="@{movie.title}"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 </layout>

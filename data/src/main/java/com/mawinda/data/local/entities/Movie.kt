@@ -1,16 +1,12 @@
 package com.mawinda.data.local.entities
 
+import android.os.Parcelable
 import androidx.paging.PagingSource
-import androidx.room.ColumnInfo
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Entity
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.PrimaryKey
-import androidx.room.Query
-import androidx.room.Update
+import androidx.room.*
+import kotlinx.parcelize.IgnoredOnParcel
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 @Entity(tableName = "movieTbl")
 data class Movie(
     @PrimaryKey
@@ -52,12 +48,23 @@ data class Movie(
     val title: String? = null,
     @ColumnInfo(name = "release_date")
     val releaseDate: String? = null
-)
+) : Parcelable {
+
+    @IgnoredOnParcel
+    val imageUrl: String
+        get() = "https://image.tmdb.org/t/p/w500/"
+
+    val poster: String
+        get() = imageUrl.plus(posterPath ?: "")
+
+    val backDrop: String
+        get() = imageUrl.plus(backdropPath)
+}
 
 @Dao
 interface MovieDao {
 
-    @Query("SELECT * FROM movieTbl")
+    @Query("SELECT * FROM movieTbl WHERE poster_path != ''")
     fun movies(): PagingSource<Int, Movie>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

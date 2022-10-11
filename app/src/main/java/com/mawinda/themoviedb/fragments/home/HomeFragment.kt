@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import com.mawinda.data.local.entities.Movie
 import com.mawinda.themoviedb.R
@@ -29,6 +30,9 @@ class HomeFragment : Fragment() {
 
     //Adapter
     private val adapter: PagingAdapter<Movie, MovieItemListBinding> by lazy {
+
+
+        //Movie Item Comparator
         val comparator = object : DiffUtil.ItemCallback<Movie>() {
             override fun areItemsTheSame(oldItem: Movie, newItem: Movie): Boolean =
                 oldItem.id == newItem.id
@@ -39,6 +43,7 @@ class HomeFragment : Fragment() {
 
 
         PagingAdapter<Movie, MovieItemListBinding>(comparator).onCreate { parent ->
+            //Binding layout
             DataBindingUtil.inflate(
                 LayoutInflater.from(parent.context),
                 R.layout.movie_item_list,
@@ -48,6 +53,16 @@ class HomeFragment : Fragment() {
         }.onBind { item ->
             this.movie = item
             this.executePendingBindings()
+        }.apply {
+
+            //Item Click Listener
+            this.onItemClicked { movie: Movie ->
+                findNavController().navigate(
+                    HomeFragmentDirections.actionHomeFragmentToDetailsFragment(
+                        movie = movie
+                    )
+                )
+            }
         }
 
     }

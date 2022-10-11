@@ -7,9 +7,12 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.navArgs
 import com.mawinda.themoviedb.R
 import com.mawinda.themoviedb.databinding.FragmentDetailsBinding
 import dagger.hilt.android.AndroidEntryPoint
+import timber.log.Timber
 
 @AndroidEntryPoint
 class DetailsFragment : Fragment() {
@@ -19,9 +22,10 @@ class DetailsFragment : Fragment() {
     private val binding: FragmentDetailsBinding
         get() = _binding!!
 
+    private val args: DetailsFragmentArgs by navArgs()
+
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         _binding =
             DataBindingUtil.inflate(layoutInflater, R.layout.fragment_details, container, false)
@@ -34,6 +38,16 @@ class DetailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        detailsViewModel.setMovie(args.movie)
+
+        lifecycleScope.launchWhenResumed {
+            detailsViewModel.movie.observe(viewLifecycleOwner) {
+                it?.let { movie ->
+                    Timber.i("Movie: $movie")
+                }
+            }
+        }
 
     }
 
