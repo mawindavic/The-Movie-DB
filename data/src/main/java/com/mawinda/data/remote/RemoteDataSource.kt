@@ -1,7 +1,6 @@
 package com.mawinda.data.remote
 
 import com.mawinda.data.remote.model.StatusResponseWithData
-import com.mawinda.data.remote.model.response.Movie
 import com.mawinda.data.remote.model.response.TrendingMovies
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers

@@ -2,6 +2,7 @@ package com.mawinda.data.remote.model.response
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import com.mawinda.data.remote.model.dto.MovieDTO
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
@@ -14,7 +15,7 @@ data class TrendingMovies(
     val totalPages: Int? = null,
 
     @field:SerializedName("results")
-    val results: List<Movie?>? = null,
+    val results: List<MovieDTO?>? = null,
 
     @field:SerializedName("total_results")
     val totalResults: Int? = null

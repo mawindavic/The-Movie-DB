@@ -1,11 +1,11 @@
-package com.mawinda.data.remote.model.response
+package com.mawinda.data.remote.model.dto
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class Movie(
+data class MovieDTO(
 
     @field:SerializedName("first_air_date")
     val firstAirDate: String? = null,

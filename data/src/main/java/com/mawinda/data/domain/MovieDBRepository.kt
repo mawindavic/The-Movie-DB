@@ -1,4 +1,4 @@
-package com.mawinda.data
+package com.mawinda.data.domain
 
 import com.mawinda.data.local.LocalDataSource
 import com.mawinda.data.remote.RemoteDataSource
