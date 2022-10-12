@@ -127,6 +127,11 @@ class PagingAdapter<T : Any, R : ViewBinding>(
         mBindSelected = bind
     }
 
+
+    fun isEmpty(): Boolean {
+        return getMutableList().isEmpty()
+    }
+
     /**
      * ADAPTER SELECTIONS, CLICKS, SWIPES
      */

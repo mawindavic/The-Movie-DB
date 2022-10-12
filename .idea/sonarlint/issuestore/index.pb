@@ -41,14 +41,8 @@ x
 Happ/src/main/java/com/mawinda/themoviedb/fragments/home/HomeViewModel.kt,0/e/0e797f957175177c02d9fe5f7ba831830693daa0
 E
 data/build.gradle.kts,9/f/9f5470ef43fd1acab01d54a63bdece9a90dec1b7
-]
--buildSrc/src/main/kotlin/DependencyHnadler.kt,3/3/33e2d2103c5f69b629ab532ab76b1ab1712722d4
-q
-Adata/src/main/java/com/mawinda/data/domain/sources/MovieSource.kt,5/b/5bd9f17cf4d80d71b158a8bdceb48d0c1edf658e
 l
 <data/src/main/java/com/mawinda/data/remote/SafeNetworkApi.kt,7/e/7e20395fdc999f8e2a1ad63f11fdb82a1202a4b6
-p
-@app/src/main/java/com/mawinda/themoviedb/utils/FragToActivity.kt,1/a/1aefc9c0522d7f869a7e70a16e78f56f15bf2a76
 p
 @data/src/main/java/com/mawinda/data/remote/model/dto/MovieDTO.kt,7/b/7b49f05378e43638621d561681a26b9769797273
 p
@@ -71,7 +65,3 @@ D
 app/build.gradle.kts,d/2/d2a4383452aad84a18429a5844d31330a012a9e6
 }
 Mapp/src/main/java/com/mawinda/themoviedb/fragments/detail/DetailsViewModel.kt,9/3/93622e430e83c753d68e74d420a2e5b8f06578ba
-k
-;data/src/main/java/com/mawinda/data/local/entities/Movie.kt,f/f/ffaef09de7ac7fe8a464273dddb5bc6d2345838c
-q
-Aapp/src/main/java/com/mawinda/themoviedb/utils/BindingAdapters.kt,1/2/12a1544cd461f2133e99e35b9921275c05618224

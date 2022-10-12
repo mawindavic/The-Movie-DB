@@ -5,6 +5,9 @@ import androidx.paging.PagingSource
 import androidx.room.*
 import kotlinx.parcelize.IgnoredOnParcel
 import kotlinx.parcelize.Parcelize
+import java.text.ParseException
+import java.text.SimpleDateFormat
+import java.util.*
 
 @Parcelize
 @Entity(tableName = "movieTbl")
@@ -71,6 +74,34 @@ data class Movie(
             originalName != null -> originalName
             else -> ""
         }
+
+    val release: String
+        get() = when {
+            releaseDate == null -> "---"
+            else -> releaseDate.formatDate("yyyy-mm-dd", "d MMM yyyy")
+        }
+
+    val air: String
+        get() = when {
+            firstAirDate == null -> "---"
+            else -> firstAirDate.formatDate("yyyy-mm-dd", "d MMM yyyy")
+        }
+}
+
+fun String.formatDate(inputPattern: String, outputPattern: String): String {
+    var str: String? = ""
+    if (this.isNotEmpty()) {
+        val inputFormat = SimpleDateFormat(inputPattern, Locale.getDefault())
+        val outputFormat = SimpleDateFormat(outputPattern, Locale.getDefault())
+        var date: Date? = null
+        try {
+            date = inputFormat.parse(this)
+        } catch (e: ParseException) {
+            e.printStackTrace()
+        }
+        str = if (date != null) outputFormat.format(date) else this
+    }
+    return str!!
 }
 
 @Dao

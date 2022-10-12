@@ -90,6 +90,7 @@ class HomeFragment : Fragment() {
                 adapter.submitData(it)
             }
         }
+
     }
 
     override fun onDestroy() {

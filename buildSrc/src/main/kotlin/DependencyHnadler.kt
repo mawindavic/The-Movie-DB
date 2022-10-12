@@ -48,7 +48,6 @@ fun DependencyHandler.retrofit() {
 fun DependencyHandler.room() {
     implementation(Room.room)
     implementation(Room.roomRunTime)
-    implementation(Room.roomSecurity)
     kapt(Room.roomKapt)
 }
 

@@ -6,6 +6,7 @@ import android.widget.LinearLayout
 import androidx.databinding.BindingAdapter
 import androidx.databinding.DataBindingUtil
 import coil.load
+import coil.size.Scale
 import com.mawinda.data.local.entities.Genre
 import com.mawinda.themoviedb.R
 import com.mawinda.themoviedb.databinding.GenreItemBinding
@@ -14,9 +15,10 @@ import com.mawinda.themoviedb.databinding.GenreItemBinding
 fun ImageView.bindImage(url: String?) {
     this.load(url) {
         crossfade(true)
-        crossfade(500)
+        scale(Scale.FILL)
         //transformations(RoundedCornersTransformation(0.0f))
     }
+
 }
 
 
@@ -24,9 +26,9 @@ fun ImageView.bindImage(url: String?) {
 fun ImageView.bindBackImage(url: String?) {
     this.load(url) {
         crossfade(true)
-        crossfade(500)
         placeholder(R.drawable.blue_rec_img)
         error(R.drawable.blue_rec_img)
+        scale(Scale.FILL)
         //transformations(RoundedCornersTransformation(0.0f))
     }
 }
