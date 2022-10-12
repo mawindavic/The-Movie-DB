@@ -57,6 +57,8 @@
                 app:layout_constraintTop_toBottomOf="@id/back_drop_img"
                 app:layout_constraintVertical_bias="0.8"
                 app:layout_constraintWidth_percent="0.24"
+                app:strokeColor="?android:colorBackground"
+                app:strokeWidth="2dp"
                 tools:ignore="UnusedAttribute">
 
                 <ImageView
@@ -141,9 +143,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/view_padding"
-                android:textStyle="bold"
                 android:text="@{@string/release_date(viewModel.movie.release)}"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@id/start_guide"
                 app:layout_constraintTop_toBottomOf="@id/overview" />
 
@@ -153,9 +155,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/view_padding"
-                android:textStyle="bold"
                 android:text="@{@string/air_date(viewModel.movie.air)}"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@id/start_guide"
                 app:layout_constraintTop_toBottomOf="@id/release_date" />
 
