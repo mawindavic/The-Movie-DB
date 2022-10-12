@@ -26,4 +26,5 @@ class AuthInterceptor @Inject constructor() : Interceptor {
     }
 
     private external fun getAccessToken(): String
+
 }

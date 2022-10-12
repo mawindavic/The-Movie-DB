@@ -17,4 +17,6 @@ abstract class MovieDatabase : RoomDatabase() {
     companion object {
         const val DATABASE_NAME = "the_movies_db"
     }
+
+
 }

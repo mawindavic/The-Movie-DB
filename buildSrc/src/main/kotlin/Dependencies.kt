@@ -54,17 +54,11 @@ object Retrofit {
 
 }
 
-object Security {
-    val prefSec by lazy { "androidx.security:security-crypto-ktx:1.1.0-alpha03" }
-}
 
 object Room {
     val room by lazy { "androidx.room:room-ktx:2.4.2" }
     val roomRunTime by lazy { "androidx.room:room-runtime:2.4.2" }
-    val roomSecurity by lazy { "net.zetetic:android-database-sqlcipher:4.5.0" }
     val roomKapt by lazy { "androidx.room:room-compiler:2.4.2" }
-
-
 }
 
 object Modules {
