@@ -25,6 +25,7 @@ A native android app to show all trending movies for this week
  6. Navigation Component -> To Create a single page app 
  7. Okhttp Cleint -> Network calls
  8. Gson Converter ->  For data conversion from json to kotlin object and vice versa
+ 9. DataBinding/ViewBinding
  
  ## Assumptions made on the requirements.
  1. Tests Network calls
