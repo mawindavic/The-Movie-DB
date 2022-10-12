@@ -37,10 +37,6 @@ r
 Bdata/src/main/java/com/mawinda/data/remote/model/StatusResponse.kt,7/9/79a3c1c2d2f873ad66965d6e024de7b1ba9d1351
 {
 Kdata/src/main/java/com/mawinda/data/remote/model/response/TrendingMovies.kt,1/f/1f0f27e1831031277c84824aeeee2917613d53ad
-x
-Happ/src/main/java/com/mawinda/themoviedb/fragments/home/HomeViewModel.kt,0/e/0e797f957175177c02d9fe5f7ba831830693daa0
-E
-data/build.gradle.kts,9/f/9f5470ef43fd1acab01d54a63bdece9a90dec1b7
 l
 <data/src/main/java/com/mawinda/data/remote/SafeNetworkApi.kt,7/e/7e20395fdc999f8e2a1ad63f11fdb82a1202a4b6
 p
@@ -61,7 +57,5 @@ o
 ?data/src/main/java/com/mawinda/data/domain/MovieDBRepository.kt,4/e/4ee9e51873bc1e9958349cf2fe5ec177f5b087ca
 C
 settings.gradle.kts,7/4/749edfcc96398253e5b3416184e95c46621da850
-D
-app/build.gradle.kts,d/2/d2a4383452aad84a18429a5844d31330a012a9e6
 }
 Mapp/src/main/java/com/mawinda/themoviedb/fragments/detail/DetailsViewModel.kt,9/3/93622e430e83c753d68e74d420a2e5b8f06578ba

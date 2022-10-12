@@ -45,6 +45,7 @@ object TestLibraries {
 object Libraries {
     val timber by lazy { "com.jakewharton.timber:timber:5.0.1" }
     val coil by lazy { "io.coil-kt:coil:2.1.0" }
+    val gson by lazy { "com.google.code.gson:gson:2.9.0" }
 }
 
 object Retrofit {

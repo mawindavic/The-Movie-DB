@@ -53,10 +53,13 @@ dependencies {
     implementation(AndroidLibraries.splashScreen)
     implementation(Libraries.coil)
     implementation(Libraries.timber)
+    implementation(Libraries.gson)
+
     paging()
     hilt()
     implementation(project(Modules.data))
     test()
+
 }
 
 kapt {
