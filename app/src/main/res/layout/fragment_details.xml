@@ -29,7 +29,7 @@
                 app:cardUseCompatPadding="true"
                 app:layout_constraintEnd_toStartOf="@id/end_guide"
                 app:layout_constraintStart_toEndOf="@id/start_guide"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toBottomOf="@id/top_guide">
 
                 <ImageView
                     backImage="@{viewModel.movie.backDrop}"
@@ -48,8 +48,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
-                android:outlineAmbientShadowColor="?attr/colorPrimary"
-                android:outlineSpotShadowColor="?attr/colorPrimary"
+                android:outlineAmbientShadowColor="?attr/colorAccent"
+                android:outlineSpotShadowColor="?attr/colorAccent"
                 app:cardPreventCornerOverlap="true"
                 app:cardUseCompatPadding="true"
                 app:layout_constraintBottom_toBottomOf="@id/back_drop_img"
@@ -86,7 +86,7 @@
                     android:layout_gravity="center"
                     android:progress="@{viewModel.movie.popularityPercent}"
                     android:secondaryProgress="100"
-                    android:secondaryProgressTint="@android:color/darker_gray" />
+                    android:secondaryProgressTint="?attr/colorAccent" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -95,7 +95,7 @@
                     android:gravity="center"
                     android:text="@{``+viewModel.movie.popularityPercent}"
                     android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
-                    android:textColor="?attr/colorPrimary"
+                    android:textColor="?attr/colorAccent"
                     android:textSize="12sp"
                     android:textStyle="bold" />
 
@@ -121,7 +121,7 @@
                 android:paddingStart="@dimen/view_padding"
                 android:text="@string/overview"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
-                android:textColor="?attr/colorPrimary"
+                android:textColor="?attr/colorSecondary"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@id/start_guide"
                 app:layout_constraintTop_toBottomOf="@id/genres"
@@ -145,6 +145,7 @@
                 android:padding="@dimen/view_padding"
                 android:text="@{@string/release_date(viewModel.movie.release)}"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                android:textColor="?attr/colorPrimary"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@id/start_guide"
                 app:layout_constraintTop_toBottomOf="@id/overview" />
@@ -157,6 +158,7 @@
                 android:padding="@dimen/view_padding"
                 android:text="@{@string/air_date(viewModel.movie.air)}"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                android:textColor="?attr/colorPrimary"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@id/start_guide"
                 app:layout_constraintTop_toBottomOf="@id/release_date" />

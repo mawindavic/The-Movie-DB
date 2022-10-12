@@ -17,9 +17,9 @@
         android:paddingEnd="2dp"
         android:text="@{genre.name}"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
-        android:textColor="@color/black"
+        android:textColor="?attr/colorSecondary"
         android:textSize="14sp"
         android:textStyle="bold"
         app:drawableStartCompat="@drawable/ic_baseline_circle_24"
-        app:drawableTint="@color/black" />
+        app:drawableTint="?attr/colorSecondary" />
 </layout>
