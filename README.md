@@ -35,9 +35,9 @@ A native android app to show all trending movies for this week
  To build the project, follow this steps
  1. Clone this repository.
  2. register for API key from http://themoviedb.org
- 3. Get your access token 
- 4.  Put your accessToken to data module  
-   - path -> data/src/main/cpp/data.cpp
+ 3. Get your access token
+ 4. Rename data.cpp.txt file to data.cpp file 
+   - path -> data/src/main/cpp/data.cpp.txt
    - In get accessToken function <br/>
     ```
      std::string getAccessToken() {
@@ -45,3 +45,4 @@ A native android app to show all trending movies for this week
     return accessToken;
 }
     ```
+    - Put your access token where it reads ```Access token here```
