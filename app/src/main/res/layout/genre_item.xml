@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="genre"
+            type="com.mawinda.data.local.entities.Genre" />
+    </data>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="2dp"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:text="@{genre.name}"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:drawableStartCompat="@drawable/ic_baseline_circle_24"
+        app:drawableTint="@color/black" />
+</layout>

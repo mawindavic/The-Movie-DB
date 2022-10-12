@@ -47,9 +47,12 @@ class DetailsFragment : Fragment() {
         lifecycleScope.launchWhenResumed {
             detailsViewModel.movie.observe(viewLifecycleOwner) {
                 it?.let { movie ->
-                    fragToActivity.setTitle(movie.title ?: "")
-                    Timber.i("Movie: $movie")
+                    fragToActivity.setTitle(movie.displayTitle)
                 }
+            }
+
+            detailsViewModel.genres.observe(viewLifecycleOwner) {
+                Timber.i("Genres: $it")
             }
         }
 

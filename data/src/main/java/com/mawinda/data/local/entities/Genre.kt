@@ -25,4 +25,8 @@ interface GenreDao {
 
     @Delete
     fun delete(vararg genre: Genre)
+
+    @Transaction
+    @Query("SELECT * FROM genre_tbl WHERE id IN (:ids)")
+    fun genres(vararg ids: Int): List<Genre>
 }

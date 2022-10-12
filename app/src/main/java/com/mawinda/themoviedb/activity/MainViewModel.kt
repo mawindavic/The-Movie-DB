@@ -22,7 +22,7 @@ class MainViewModel @Inject constructor(private val repository: MovieDBRepositor
 
     private fun loadGenre() {
         viewModelScope.launch {
-            repository.genres()
+            repository.loadGenres()
         }
     }
 

@@ -60,8 +60,17 @@ data class Movie(
     val backDrop: String
         get() = imageUrl.plus(backdropPath)
 
-    val popularityPercent: Double
-        get() = (popularity ?: 0.0).times(100)
+    val popularityPercent: Int
+        get() = (popularity ?: 0.0).toInt()
+
+    val displayTitle: String
+        get() = when {
+            title != null -> title
+            originalTitle != null -> originalTitle
+            name != null -> name
+            originalName != null -> originalName
+            else -> ""
+        }
 }
 
 @Dao

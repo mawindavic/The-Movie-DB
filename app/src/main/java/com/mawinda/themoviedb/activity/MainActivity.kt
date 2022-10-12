@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.mawinda.themoviedb.R
 import com.mawinda.themoviedb.databinding.ActivityMainBinding
@@ -46,7 +47,11 @@ class MainActivity : AppCompatActivity(), FragToActivity {
         setupActionBarWithNavController(navController, appBarConfiguration)
     }
 
+    override fun onSupportNavigateUp(): Boolean {
+        return NavigationUI.navigateUp(navController, appBarConfiguration)
+    }
+
     override fun setTitle(title: String) {
-       mainViewModel.setTitle(title)
+        mainViewModel.setTitle(title)
     }
 }
