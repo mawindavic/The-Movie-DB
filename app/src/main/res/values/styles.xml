@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Theme.TheMovieDB.Splash">
+        <item name="windowSplashScreenBackground">?android:colorBackground</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/blue_rec_img</item>
+        <item name="postSplashScreenTheme">@style/Theme.TheMovieDB</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowSplashScreenBrandingImage" tools:ignore="NewApi">
+            @drawable/blue_rec_img
+        </item>
+    </style>
+</resources>

@@ -16,7 +16,6 @@
         android:layout_height="match_parent"
         tools:context=".fragments.home.HomeFragment">
 
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/container"
             android:layout_width="0dp"

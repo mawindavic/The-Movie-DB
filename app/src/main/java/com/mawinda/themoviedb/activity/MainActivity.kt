@@ -3,6 +3,7 @@ package com.mawinda.themoviedb.activity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
@@ -34,7 +35,7 @@ class MainActivity : AppCompatActivity(), FragToActivity {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        installSplashScreen()
         binding.apply {
             lifecycleOwner = this@MainActivity
             this.viewModel = mainViewModel
